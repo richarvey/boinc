@@ -16,4 +16,5 @@ ENV weak_key 983535_e185433cff95d3c7a8a9d29926f3138a
 ONBUILD VOLUME /data
 WORKDIR /data
 
-CMD ["/usr/bin/boinc --attach_project $project $weak_key"]
+ENTRYPOINT /usr/bin/boinc --attach_project
+CMD $project $weak_key
