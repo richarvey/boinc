@@ -16,5 +16,5 @@ WORKDIR /data
 
 #CMD ["/usr/bin/boinc", "--attach_project", "www.worldcommunitygrid.org", "983535_e185433cff95d3c7a8a9d29926f3138a "]
 
-ENTRYPOINT ["/usr/bin/boinc", "--attach_project"]
+ENTRYPOINT ["/bin/bash", "/usr/bin/boinc", "--attach_project"]
 CMD ["www.worldcommunitygrid.org", "983535_e185433cff95d3c7a8a9d29926f3138a "]
