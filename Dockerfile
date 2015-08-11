@@ -10,11 +10,10 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install boinc client
 RUN apt-get update && apt-get install --yes --no-install-recommends --no-install-suggests boinc-client && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-ONBUILD VOLUME /data
+ENV project www.worldcommunitygrid.org
+ENV weak_key 983535_e185433cff95d3c7a8a9d29926f3138a
 
+ONBUILD VOLUME /data
 WORKDIR /data
 
-#CMD ["/usr/bin/boinc", "--attach_project", "www.worldcommunitygrid.org", "983535_e185433cff95d3c7a8a9d29926f3138a "]
-
-ENTRYPOINT ["/bin/bash", "/usr/bin/boinc", "--attach_project"]
-CMD ["www.worldcommunitygrid.org", "983535_e185433cff95d3c7a8a9d29926f3138a "]
+CMD ["/usr/bin/boinc", "--attach_project", $project, $weak_key]
