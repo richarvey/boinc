@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:stretch-slim
 MAINTAINER Ric Harvey <ric@ngineered.co.uk>
 
 # Surpress Upstart errors/warning
