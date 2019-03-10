@@ -1,6 +1,6 @@
 ## About
 
-A simple boinc container built on debian jessie. This container will run the boinc client and by default connect into the world community grid. The dfault credentials are for richarvey and the weak key is provided. See "Running" for information on overriding these variables.
+A simple boinc container built on debian stretch (slim). This container will run the boinc client and by default connect into the world community grid. The dfault credentials are for richarvey and the weak key is provided. See "Running" for information on overriding these variables.
 
 ## Pulling the Container
 
@@ -12,7 +12,7 @@ There are multiple ways to run the container
 
 ### Default mode
 
-This will run the container and contribute to team ngd:
+This will run the container and contribute to the container team:
 
     docker run -d --name boinc richarvey/boinc:latest
 
@@ -20,7 +20,7 @@ To enable network connectivity in order to use boinccmd or boinc manager from an
 
     docker run -d --name boinc -P richarvey/boinc:latest
 
-Be warned this opens controll of boinc up to anyone on the network without a password!
+Be warned this opens control of boinc up to anyone on the network without a password!
 
 ### Custom Project and Keys
 
@@ -42,4 +42,3 @@ If you're not registered for the world community grid please do so here:
 
 http://www.worldcommunitygrid.org/reg/viewRegister.do?teamID=0WGND0WR52
 
-<iframe src="http://www.worldcommunitygrid.org/getDynamicImage.do?teamId=0WGND0WR52&mnOn=true&stat=1&imageNum=1&rankOn=false&projectsOn=false&special=true" frameborder="0" name="di" scrolling="no" width="405px" height="145px"></iframe>
