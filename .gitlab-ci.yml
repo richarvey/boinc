@@ -3,19 +3,30 @@ services:
   - docker:dind
 
 stages:
-  - build_latest
+  - build_wcc
+  - build_climate
 
 before_script:
   - echo Logging in to $CI_REGISTRY...
   - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
   - docker info | grep Registry
 
-build_latest:
+build_wcc:
   stage: build_latest
   script:
     - echo Build started on `date` for $CI_COMMIT_REF_NAME
     - docker build -t richarvey/boinc:latest .
     - docker images
     - docker push "$CI_REGISTRY_IMAGE":latest
+  only:
+    - master
+
+build_climate:
+  stage: build_latest
+  script:
+    - echo Build started on `date` for $CI_COMMIT_REF_NAME
+    - docker build -t richarvey/boinc:climate -f Dockerfile-climate .
+    - docker images
+    - docker push "$CI_REGISTRY_IMAGE":climate
   only:
     - master
