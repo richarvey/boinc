@@ -3,7 +3,7 @@ services:
 
 stages:
   - build
-  - container_scanning-latest
+  - container_scanning
 
 build_wcc:
   image: docker:stable
@@ -35,7 +35,7 @@ build_climate:
   only:
     - master
 
-container_scanning-latest:
+container_scanning:
   stage: container_scanning
   image: docker:stable
   variables:
