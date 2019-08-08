@@ -2,14 +2,11 @@
 
 A simple boinc container built on debian stretch (slim). This container will run the boinc client and by default connect into the world community grid. The default credentials are for richarvey and the weak key is provided. See "Running" for information on overriding these variables.
 
-There are now two versions of the boinc container:
-
 ```
 richarvey/boinc:latest - connects to the world community grid
-richarvey/boinc:climate - connects to https://www.climateprediction.net
 ```
 
-Both will run out the box with my weak key and no customisation.
+It will run out the box with my "weak key" and no customisation.
 
 ## Pulling the Container
 
