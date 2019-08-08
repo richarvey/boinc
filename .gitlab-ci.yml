@@ -20,21 +20,6 @@ build_wcc:
   only:
     - master
 
-build_climate:
-  image: docker:stable
-  stage: build
-  allow_failure: false
-  before_script:
-    - echo Logging in to $CI_REGISTRY...
-    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
-  script:
-    - echo Build started on `date` for $CI_COMMIT_REF_NAME
-    - docker build -t richarvey/boinc:climate -f Dockerfile-climate .
-    - docker images
-    - docker push "$CI_REGISTRY_IMAGE":climate
-  only:
-    - master
-
 container_scanning:
   stage: container_scanning
   image: docker:stable
