@@ -1,20 +1,16 @@
-FROM debian:buster-slim
+FROM alpine:latest 
 MAINTAINER Ric Harvey <ric@ngineered.co.uk>
 
-# Surpress Upstart errors/warning
-RUN dpkg-divert --local --rename --add /sbin/initctl && ln -sf /bin/true /sbin/initctl
-
-# Let the conatiner know that there is no tty
-ENV DEBIAN_FRONTEND noninteractive
 
 # Install boinc client
-RUN apt-get update && apt-get upgrade --yes && apt-get install --yes --no-install-recommends --no-install-suggests boinc-client && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apk update && apk upgrade
+RUN apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing boinc
 
 User root
 
 EXPOSE 31416 80 443
 
-WORKDIR /var/lib/boinc-client
+WORKDIR /var/lib/boinc
 
 ENTRYPOINT ["/usr/bin/boinc", "--allow_remote_gui_rpc", "--attach_project"]
 CMD ["www.worldcommunitygrid.org", "983535_e185433cff95d3c7a8a9d29926f3138a"]
