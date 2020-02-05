@@ -1,5 +1,5 @@
 FROM alpine:latest 
-MAINTAINER Ric Harvey <ric@ngineered.co.uk>
+MAINTAINER Ric Harvey <@ric__harvey> 
 
 
 # Install boinc client
