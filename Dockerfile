@@ -9,10 +9,10 @@ RUN apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/test
 User root
 
 # BOINC RPC port
-EXPOSE 31416
+EXPOSE 31416 80 443
 
 WORKDIR /var/lib/boinc
 
-ENTRYPOINT ["/usr/bin/boinc", "--", "--allow_remote_gui_rpc", "--attach_project"]
+ENTRYPOINT ["/usr/bin/boinc", "--allow_remote_gui_rpc", "--attach_project"]
 CMD ["www.worldcommunitygrid.org", "983535_e185433cff95d3c7a8a9d29926f3138a"]
 
