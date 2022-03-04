@@ -1,6 +1,6 @@
 ## About
 
-A simple boinc container built on debian (slim). This container will run the boinc client and by default connect into the world community grid. The default credentials are for richarvey and the weak key is provided. See "Running" for information on overriding these variables.
+A simple boinc container built on alpine linux. This container will run the boinc client and by default connect into the world community grid. The default credentials are for richarvey and the weak key is provided. See "Running" for information on overriding these variables.
 
 ```
 richarvey/boinc:latest - connects to the world community grid
