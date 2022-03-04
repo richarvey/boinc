@@ -40,7 +40,7 @@ and with networking:
 
 ## Join my container team
 
-Please my container team and help us contribute to the world community grid.
+Please join my container team and help us contribute to the world community grid.
 
 http://www.worldcommunitygrid.org/team/viewTeamInfo.do?teamId=0WGND0WR52
 
